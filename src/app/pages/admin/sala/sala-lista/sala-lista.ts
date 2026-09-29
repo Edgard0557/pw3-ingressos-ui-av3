@@ -1,9 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { ContainerComponent } from '../../../../shared/components/container/container';
-import { RouterLink } from "@angular/router";
+import { ActivatedRoute, RouterLink } from "@angular/router";
+import { SalaService } from '../../../../core/services/sala.service';
+import { Observable, of } from 'rxjs';
+import { Sala } from '../../../../core/models';
 
 
 @Component({
@@ -13,6 +16,15 @@ import { RouterLink } from "@angular/router";
   templateUrl: './sala-lista.html',
   styleUrl: './sala-lista.css'
 })
-export class SalaListaComponent {
-  
+export class SalaListaComponent implements OnInit{
+
+  salas: Observable<Sala> = of();
+  private salaService = inject(SalaService);
+  private route = inject(ActivatedRoute);
+
+  ngOnInit(): void {
+    
+    const id = this.route.snapshot.params['id'];
+    this.salas = this.salaService.buscarSalaporId(id);
+  }
 }
