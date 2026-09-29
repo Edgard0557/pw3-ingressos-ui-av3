@@ -1,0 +1,65 @@
+.page-container {
+  padding: 32px 0;
+}
+
+h2 {
+  color: #1D1B20;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.actions {
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.data-table th,
+.data-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.data-table th {
+  background-color: #673ab7;
+  font-weight: 600;
+  color: white;
+}
+
+.data-table tr:hover {
+  background-color: #f5f0ff;
+}
+
+.item-title {
+  font-weight: 500;
+  color: #673ab7;
+}
+
+.price {
+  font-weight: 600;
+  color: #388e3c;
+}
+
+.actions-cell {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.empty-msg {
+  text-align: center;
+  color: #999;
+  padding: 24px !important;
+}
